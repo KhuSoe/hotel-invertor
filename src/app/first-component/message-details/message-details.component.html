@@ -1,0 +1,11 @@
+<p>message-details works!</p>
+<div *ngIf="numOfMessages > 0" class="card-container">
+    <div *ngFor="let message of messages; let i = index" class="card">
+        <div class="card-body">
+            <h5 class="card-title">Name: {{ message.name }}</h5>
+            <p class="card-text">Email: {{ message.email }}</p>
+            <p class="card-text">Message: {{ message.message }}</p>
+            <button (click)="deleteMessage(i)" class="button btn-primary">Delete</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<p>room works!</p>
+<h1>fadsfdsf</h1>
+<h3>hotel name: {{hotelName}}</h3>
+<div [hidden]="hideRooms">
+    number of rooms:
+    <div [innerText]="noOfRooms"></div>
+</div>
+
+<button (click)="toggle()">Toggle</button>
+<div *ngIf="rooms.availableRooms > 0" >
+    Room List: 
+
+    <div>
+        <button class="button" (click)="addRoom()">
+            Add Room
+        </button>
+    </div>
+
+    <app-rooms-list [rooms]="roomList"
+                    [title]="'Room List'"
+                    (roomSelected)="selectRoom($event)">
+    </app-rooms-list>
+    <div *ngIf="selectedRoom">
+        {{selectedRoom | json }}
+    </div>
+</div>
+<div class="container mt-5">
+    <div class="card" style="width: 18rem;">
+        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image">
+        <div class="card-body">
+            <h5 class="card-title">Card Title</h5>
+            <p class="card-text">This is some example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+</div>
