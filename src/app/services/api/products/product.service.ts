@@ -21,3 +21,4 @@ export class ProductService {
     return this.http.post<ProductRepresentation>(this.baseUrl, product);
   }
 }
+ 

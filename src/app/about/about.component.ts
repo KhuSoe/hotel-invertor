@@ -14,40 +14,6 @@ import { Observable } from 'rxjs';
   imports: [RouterModule, HttpClientModule, CommonModule],
   providers: [ProductService],
 })
-export class AboutComponent implements OnInit {
-  products: ProductRepresentation[] = [];
-  param: any;
-  queryParam: any;
-
-  constructor(
-    private activatedRoute: ActivatedRoute,
-    private productService: ProductService
-  ) {}
-
-  ngOnInit(): void {
-    this.param = this.activatedRoute.snapshot.params['name'];
-    this.queryParam = this.activatedRoute.snapshot.queryParams['occupation'];
-
-    const newProduct: ProductRepresentation = {
-      titles: 'Product 1',
-      description: 'Product 1 description',
-      price: 100,
-      image: 'https://picsum.photos/200/300',
-    };
-
-    this.productService.createProduct(newProduct).subscribe({
-      next: (result: ProductRepresentation) => {
-        console.log('Product created:', result);
-        this.products.push(result);
-      },
-      error: (err: any) => { // Specify the error type
-        console.error('Error creating product:', err);
-      }
-    });
-
-    this.productService.getProducts().subscribe(data => {
-      console.log('API Response:', data);
-      this.products = data;
-    });
-  }
+export class AboutComponent {
+  
 }
